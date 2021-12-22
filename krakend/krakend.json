@@ -1,0 +1,64 @@
+{
+  "version": 2,
+  "name": "Auth - API Gateway",
+  "port": 8000,
+  "extra_config": {
+    "github_com/devopsfaith/krakend-gologging": {
+      "level": "DEBUG",
+      "prefix": "[KRAKEND]",
+      "syslog": false,
+      "stdout": true,
+      "custom_format": "%{message}"
+    }
+  },
+  "timeout": "3000ms",
+  "cache_ttl": "300s",
+  "output_encoding": "json",
+  "endpoints": [
+    {
+      "endpoint": "/create_token",
+      "method": "POST",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/Token",
+          "encoding": "json",
+          "sd": "static",
+          "method": "POST",
+          "extra_config": {},
+          "host": [
+            "http://auth"
+          ],
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/weather_forecast",
+      "method": "GET",
+      "extra_config": {
+        "github.com/devopsfaith/krakend-jose/validator": {
+          "alg": "RS256",
+          "jwk-url": "http://auth/Jwk",
+          "issuer": "jwt_issuer",
+          "disable_jwk_security": true
+        }
+      },
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/WeatherForecast",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "GET",
+          "extra_config": {},
+          "host": [
+            "http://resource"
+          ],
+          "disable_host_sanitize": false
+        }
+      ]
+    }
+  ]
+}

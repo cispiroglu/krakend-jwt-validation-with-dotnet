@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{74B17DAA-48CE-4EE6-8BAE-7C20F6B002E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{CE47C727-B4F2-47A1-890C-8612827D5F3D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{3E66B516-F494-4C02-8AED-3377E58CD6BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth", "src\API\Auth\Auth.csproj", "{CBE78325-7D27-4778-9034-058CE9BC291C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jwt", "src\Infrastructure\Jwt\Jwt.csproj", "{427042D7-ABEC-4DBD-89AB-30C91D0A3680}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jwt.Extensions.Autofac", "src\Infrastructure\Jwt.Extensions.Autofac\Jwt.Extensions.Autofac.csproj", "{9BFD25B7-F2BC-4923-8A93-A31B7533AA5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{E61E350D-237F-4074-9E9D-B437ACE1C067}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resource", "src\API\Resource\Resource.csproj", "{D64DFB75-00C6-4B29-8091-4CA0D9F23BB4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "krakend", "krakend", "{CE187987-9433-448F-B99B-EA37DB4065DD}"
+	ProjectSection(SolutionItems) = preProject
+		krakend\krakend.json = krakend\krakend.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CE47C727-B4F2-47A1-890C-8612827D5F3D} = {74B17DAA-48CE-4EE6-8BAE-7C20F6B002E0}
+		{3E66B516-F494-4C02-8AED-3377E58CD6BC} = {74B17DAA-48CE-4EE6-8BAE-7C20F6B002E0}
+		{CBE78325-7D27-4778-9034-058CE9BC291C} = {CE47C727-B4F2-47A1-890C-8612827D5F3D}
+		{427042D7-ABEC-4DBD-89AB-30C91D0A3680} = {3E66B516-F494-4C02-8AED-3377E58CD6BC}
+		{9BFD25B7-F2BC-4923-8A93-A31B7533AA5B} = {3E66B516-F494-4C02-8AED-3377E58CD6BC}
+		{D64DFB75-00C6-4B29-8091-4CA0D9F23BB4} = {CE47C727-B4F2-47A1-890C-8612827D5F3D}
+		{CE187987-9433-448F-B99B-EA37DB4065DD} = {E61E350D-237F-4074-9E9D-B437ACE1C067}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBE78325-7D27-4778-9034-058CE9BC291C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBE78325-7D27-4778-9034-058CE9BC291C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBE78325-7D27-4778-9034-058CE9BC291C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBE78325-7D27-4778-9034-058CE9BC291C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{427042D7-ABEC-4DBD-89AB-30C91D0A3680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{427042D7-ABEC-4DBD-89AB-30C91D0A3680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{427042D7-ABEC-4DBD-89AB-30C91D0A3680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{427042D7-ABEC-4DBD-89AB-30C91D0A3680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BFD25B7-F2BC-4923-8A93-A31B7533AA5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BFD25B7-F2BC-4923-8A93-A31B7533AA5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BFD25B7-F2BC-4923-8A93-A31B7533AA5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BFD25B7-F2BC-4923-8A93-A31B7533AA5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D64DFB75-00C6-4B29-8091-4CA0D9F23BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D64DFB75-00C6-4B29-8091-4CA0D9F23BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D64DFB75-00C6-4B29-8091-4CA0D9F23BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D64DFB75-00C6-4B29-8091-4CA0D9F23BB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

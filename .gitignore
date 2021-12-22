@@ -1,0 +1,12 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+.idea/.idea.krakend-jwt-validation-with-dotnet/.idea/indexLayout.xml
+
+.idea/.idea.krakend-jwt-validation-with-dotnet/.idea/projectSettingsUpdater.xml
+
+.idea/.idea.krakend-jwt-validation-with-dotnet/.idea/vcs.xml
+
+.idea/.idea.krakend-jwt-validation-with-dotnet/.idea/workspace.xml

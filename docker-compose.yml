@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  auth:
+    image: auth
+    container_name: auth
+    build:
+      context: .
+      dockerfile: src/API/Auth/Dockerfile
+        
+  resource:
+    image: resource
+    container_name: resource
+    build:
+      context: .
+      dockerfile: src/API/Resource/Dockerfile
+      
+  kraken_designer:
+    container_name: krakend_designer
+    image: devopsfaith/krakendesigner:latest
+    depends_on:
+      - auth
+      - resource
+    ports:
+      - 8787:80
+      
+  krakend_back_office:
+    container_name: krakend_back_office
+    image: devopsfaith/krakend:1.4.1
+    depends_on:
+      - auth
+      - resource
+    volumes:
+      - ./krakend:/etc/krakend
+    ports:
+      - 8888:8000
